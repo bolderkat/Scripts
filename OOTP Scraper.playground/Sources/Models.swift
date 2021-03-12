@@ -1,20 +1,32 @@
 import Foundation
 
 public struct TeamResult: Equatable {
-    let team: Team
-    let runs: Int
-    let hits: Int
-    let errors: Int
+    public let team: Team
+    public let runs: Int
+    public let hits: Int
+    public let errors: Int
+    
+    public init(team: Team, runs: Int, hits: Int, errors: Int) {
+        self.team = team
+        self.runs = runs
+        self.hits = hits
+        self.errors = errors
+    }
 }
 
 public struct FinishedGame: Equatable {
-    let awayResult: TeamResult
-    let homeResult: TeamResult
-    var winner: Team {
+    public let awayResult: TeamResult
+    public let homeResult: TeamResult
+    public var winner: Team {
         awayResult.runs > homeResult.runs ? awayResult.team : homeResult.team
     }
-    var loser: Team {
+    public var loser: Team {
         awayResult.runs < homeResult.runs ? awayResult.team : homeResult.team
+    }
+    
+    public init(awayResult: TeamResult, homeResult: TeamResult) {
+        self.awayResult = awayResult
+        self.homeResult = homeResult
     }
 }
 
@@ -49,5 +61,9 @@ public enum Team: String {
     case texas = "texas_rangers"
     case toronto = "toronto_blue_jays"
     case washington = "washington_nationals"
+    
+    public var name: String {
+        self.rawValue.capitalized.replacingOccurrences(of: "_", with: " ")
+    }
 }
 
