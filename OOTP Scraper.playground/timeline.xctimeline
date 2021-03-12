@@ -3,7 +3,12 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/daniel/src/Scripts/OOTP%20Scraper.playground#CharacterRangeLen=458&amp;CharacterRangeLoc=684&amp;EndingColumnNumber=0&amp;EndingLineNumber=44&amp;StartingColumnNumber=25&amp;StartingLineNumber=21&amp;Timestamp=637221481.090189"
+         documentLocation = "file:///Users/daniel/src/Scripts/OOTP%20Scraper.playground#CharacterRangeLen=480&amp;CharacterRangeLoc=676&amp;EndingColumnNumber=0&amp;EndingLineNumber=45&amp;StartingColumnNumber=25&amp;StartingLineNumber=21&amp;Timestamp=637221743.6445971"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/daniel/src/Scripts/OOTP%20Scraper.playground#CharacterRangeLen=9&amp;CharacterRangeLoc=975&amp;EndingColumnNumber=26&amp;EndingLineNumber=29&amp;StartingColumnNumber=17&amp;StartingLineNumber=29&amp;Timestamp=637221743.644727"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>

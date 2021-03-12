@@ -1,5 +1,16 @@
 import Foundation
 
+public struct FinishedGame: Equatable {
+    let team1: Team
+    let team1Runs: Int
+    let team1Hits: Int
+    let team1Errors: Int
+    let team2: Team
+    let team2Runs: Int
+    let team2Hits: Int
+    let team2Errors: Int
+}
+
 public enum Team: String {
     case arizona = "arizona_diamondbacks"
     case atlanta = "atlanta_braves"
@@ -32,3 +43,4 @@ public enum Team: String {
     case toronto = "toronto_blue_jays"
     case washington = "washington_nationals"
 }
+
