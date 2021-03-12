@@ -1,14 +1,21 @@
 import Foundation
 
+public struct TeamResult: Equatable {
+    let team: Team
+    let runs: Int
+    let hits: Int
+    let errors: Int
+}
+
 public struct FinishedGame: Equatable {
-    let team1: Team
-    let team1Runs: Int
-    let team1Hits: Int
-    let team1Errors: Int
-    let team2: Team
-    let team2Runs: Int
-    let team2Hits: Int
-    let team2Errors: Int
+    let awayResult: TeamResult
+    let homeResult: TeamResult
+    var winner: Team {
+        awayResult.runs > homeResult.runs ? awayResult.team : homeResult.team
+    }
+    var loser: Team {
+        awayResult.runs < homeResult.runs ? awayResult.team : homeResult.team
+    }
 }
 
 public enum Team: String {
