@@ -1,4 +1,5 @@
 import Foundation
+
 var htmlString = ""
 let localURL = Bundle.main.path(forResource: "SampleHTML", ofType: "html")
 let contentData = FileManager.default.contents(atPath: localURL!)
@@ -19,26 +20,25 @@ games.removeFirst()
 
 
 let finishedGames = games.filter {$0.contains("FINAL") }
-finishedGames.count
 
-
-
-
-
-
-
-struct FinishedGame: Equatable {
-    let team1: String
-    let team1Runs: Int
-    let team1Hits: Int
-    let team1Errors: Int
-    let team2: String
-    let team2Runs: Int
-    let team2Hits: Int
-    let team2Errors: Int
+for game in finishedGames {
+    var teamResults = game.components(separatedBy: #"<img src="../images/team_logos/"#)
+    teamResults.removeFirst()
+    for result in teamResults {
+        if let index = result.index(of: "_16") {
+            let subString = result[..<index]
+            let teamString = String(subString)
+            let team = Team(rawValue: teamString)!
+            print(team)
+        }
+    }
+    
 }
 
 
-enum Team: String {
-    case arizona, atlanta, baltimore, boston, chicagoCubs, chicagoWhiteSox, cincinnati, cleveland, colorado, detroit, houston, kansasCity, losAngelesAngels, losAngelesDodgers, miami, milwaukee, minnesota, newYorkMets, newYorkYankees, oakland, philadelphia, pittsburgh, sanDiego, sanFrancisco, seattle, stLouis, tampaBay, texas, toronto, washington
-}
+
+
+
+
+
+
