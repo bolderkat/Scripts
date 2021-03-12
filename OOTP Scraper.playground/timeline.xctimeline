@@ -2,5 +2,10 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/daniel/src/Scripts/OOTP%20Scraper.playground#CharacterRangeLen=52&amp;CharacterRangeLoc=444&amp;EndingColumnNumber=0&amp;EndingLineNumber=13&amp;StartingColumnNumber=25&amp;StartingLineNumber=11&amp;Timestamp=637216705.6687911"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
