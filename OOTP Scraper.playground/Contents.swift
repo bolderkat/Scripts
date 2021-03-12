@@ -25,12 +25,21 @@ for game in finishedGames {
     var teamResults = game.components(separatedBy: #"<img src="../images/team_logos/"#)
     teamResults.removeFirst()
     for result in teamResults {
-        print(result)
-        if let index = result.index(of: "_16") {
-            let subString = result[..<index]
+        if let teamIndex = result.index(of: "_16") {
+            let subString = result[..<teamIndex]
             let teamString = String(subString)
-            let team = Team(rawValue: teamString)!
-            print(team)
+            
+            // R, H, and E values lie between these HTML tags
+            let resultStartIndexes = result.endIndices(of: #"<span style="color:#F6EF7D;">"#)
+            let resultEndIndexes = result.indices(of: "</span></td>")
+            
+            let runs = result[resultStartIndexes[0]...resultEndIndexes[0]].dropLast()
+            let hits = result[resultStartIndexes[1]...resultEndIndexes[1]].dropLast()
+            let errors = result[resultStartIndexes[2]...resultEndIndexes[2]].dropLast()
+            if let team = Team(rawValue: teamString) {
+                print("\(team) --- Runs: \(runs), hits: \(hits), Errors: \(errors)")
+                
+            }
         }
     }
     

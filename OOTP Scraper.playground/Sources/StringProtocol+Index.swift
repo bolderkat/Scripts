@@ -1,6 +1,7 @@
 import Foundation
 
 // solution from https://stackoverflow.com/a/32306142
+// added endIndices func
 
 public extension StringProtocol {
     func index<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
@@ -11,6 +12,9 @@ public extension StringProtocol {
     }
     func indices<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Index] {
         ranges(of: string, options: options).map(\.lowerBound)
+    }
+    func endIndices<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Index] {
+        ranges(of: string, options: options).map(\.upperBound)
     }
     func ranges<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Range<Index>] {
         var result: [Range<Index>] = []
